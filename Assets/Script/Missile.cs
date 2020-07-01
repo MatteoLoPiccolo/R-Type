@@ -46,7 +46,7 @@ public class Missile : MonoBehaviour
             rb.angularVelocity = rotationAmount * rotationForce;
             // the facing direction where shoot
             rb.velocity = transform.right * powerUpScriptableObj.speed;            
-        }
+        }        
     }
 
     private void OnTriggerEnter(Collider other)

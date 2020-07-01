@@ -73,10 +73,9 @@ GameObject:
   - component: {fileID: 6724330808595384939}
   - component: {fileID: 6724330808595384936}
   - component: {fileID: 6724330808595384937}
-  - component: {fileID: 3610473210508975457}
   m_Layer: 0
   m_Name: Force
-  m_TagString: Untagged
+  m_TagString: Force
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +93,7 @@ Transform:
   m_Children:
   - {fileID: 6724330807984353055}
   - {fileID: 6724330808042929244}
+  - {fileID: 5526030655126637728}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -171,23 +171,37 @@ MonoBehaviour:
   player: {fileID: 0}
   frontPosition: {fileID: 0}
   backPosition: {fileID: 0}
-  lauchPoint: {fileID: 0}
+  frontFirePoint: {fileID: 6724330807984353052}
+  backFirePoint: {fileID: 6724330808042929245}
+  lauchPoint: {fileID: 7191653928326369706}
   rotationSpeed: 10
---- !u!114 &3610473210508975457
-MonoBehaviour:
+--- !u!1 &7191653928326369706
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6724330808595384943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85f9e50fb51faab49af9586a619326da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2221800559846066371, guid: ea19b4843e1d35142beddaeeb6a22661,
-    type: 3}
-  firePoint: {fileID: 0}
-  forceFirePoint: {fileID: 0}
-  forceBackFirePoint: {fileID: 0}
-  launchPoint: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5526030655126637728}
+  m_Layer: 0
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5526030655126637728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191653928326369706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6724330808595384933}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

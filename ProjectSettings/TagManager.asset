@@ -11,6 +11,16 @@ TagManager:
   - Missile
   - HomingBits
   - Enemy
+  - Wall
+  - Beam
+  - Beam_Drop
+  - Flame
+  - Flame_Drop
+  - HomingBits_Drop
+  - Missile_Drop
+  - Laser
+  - Laser_Drop
+  - Force
   layers:
   - Default
   - TransparentFX

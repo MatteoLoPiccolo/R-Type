@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1309894524310367597}
   m_Layer: 0
   m_Name: Homing_Bits_Drop
-  m_TagString: Untagged
+  m_TagString: Beam_Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

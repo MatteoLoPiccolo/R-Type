@@ -5,13 +5,10 @@ using UnityEngine;
 public class Force : MonoBehaviour
 {
     #region Variable
-    // reference to player, frontPosition and backPosition, frontFirePosition and backFirePosition
-    public GameObject player;
-    
-    public GameObject frontPosition;    
-    public GameObject backPosition;    
-    public GameObject lauchPoint;
-        
+
+    // reference to player, frontPosition and backPosition, frontFirePosition and backFirePosition and launchPoint
+    public GameObject player, frontPosition, backPosition, frontFirePoint, backFirePoint, lauchPoint;
+
     [SerializeField]
     // speed variable
     private float rotationSpeed = 10f;
@@ -21,9 +18,10 @@ public class Force : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // rotate force
         Rotate();
-
-        Launch();        
+        // launch force in front position and go back
+        //Launch();        
     }
     #endregion
 
@@ -31,21 +29,7 @@ public class Force : MonoBehaviour
     private void Rotate()
     {
         this.transform.Rotate((rotationSpeed * Time.deltaTime), 0f, 0f);
-    }
-
-    private void Launch()
-    {
-        if (transform.position == frontPosition.transform.position)
-        {
-            lauchPoint.transform.parent = this.transform.parent;
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                float time = 1.5f;
-                Vector3.Lerp(frontPosition.transform.position, lauchPoint.transform.position, time);
-            }
-        }
-    }
+    }    
 
     #endregion
 
@@ -70,6 +54,11 @@ public class Force : MonoBehaviour
 
                 //player.GetComponent<Shoot>().enabled = false;
             }
+        }
+
+        if (other.gameObject.tag == "Enemy_Projectile")
+        {
+            Destroy(other.gameObject);
         }
     }
     #endregion

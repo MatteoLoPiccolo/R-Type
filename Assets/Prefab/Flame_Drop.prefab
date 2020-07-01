@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7959015326089580913}
   m_Layer: 0
   m_Name: Flame_Drop
-  m_TagString: Untagged
+  m_TagString: Flame_Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

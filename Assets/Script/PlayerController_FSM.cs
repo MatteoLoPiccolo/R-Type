@@ -20,10 +20,6 @@ public class PlayerController_FSM : MonoBehaviour
     {
         get { return rB; }
     }    
-
-    public enum State { Idle, Movement, Shoot }
-
-    public State state;
     #endregion
 
     #region Awake
@@ -38,12 +34,9 @@ public class PlayerController_FSM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // initialize state
-        state = State.Idle;        
-
         float halfPlayerWidth = transform.localScale.x / 2f;
 
-        screenWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize - halfPlayerWidth;        
+        screenWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize - halfPlayerWidth;
     }
     #endregion
 
@@ -84,9 +77,13 @@ public class PlayerController_FSM : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Missille")
+        if (other.gameObject.tag == "Missile_Drop")
         {
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Wall")
+        {
+            Destroy(this.gameObject);
         }
     }
     #endregion

@@ -22,7 +22,7 @@ public class PowerUpScriptableObj : ScriptableObject
     {
         switch (_type)
         {
-            case AttackType.Beam:         
+            case AttackType.Beam:      
                 break;
             case AttackType.Laser:
                 break;
