@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class PoolManager : MonoBehaviour
@@ -35,7 +34,7 @@ public class PoolManager : MonoBehaviour
     #region Start
     private void Start()
     {
-        _bulletPool = GenerateBullets(10);   
+        _bulletPool = GenerateBullets(10);
     }
     #endregion
 

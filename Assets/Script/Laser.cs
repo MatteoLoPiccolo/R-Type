@@ -1,19 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
     #region Variable
-    public PowerUpScriptableObj powerUpScriptableObj;
+    // reference to powerup
+    public PowerUp powerUp;
+
+    // set speed of projectile
+    public float speed = 30;
     #endregion
+
     #region Start
     // Start is called before the first frame update
     void Start()
     {
-        powerUpScriptableObj.Print();
+        // print data of power up
+        powerUp.Print();
     }
     #endregion
+        
     #region Trigger for collect PowerUp
     private void OnTriggerEnter(Collider other)
     {
@@ -23,4 +28,12 @@ public class Laser : MonoBehaviour
         }
     }
     #endregion
+
+    #region Shoot Laser
+    private void ShootLaser()
+    {
+        
+    }
+    #endregion
+
 }

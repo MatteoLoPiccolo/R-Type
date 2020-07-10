@@ -124,5 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1359974607058451174, guid: 9ddf952f42aa2204bb39c0a7f6a0039a, type: 3}
   rotationForce: 100
-  powerUpScriptableObj: {fileID: 11400000, guid: a83ae3abe6855df4d9879dff74b5ff75,
-    type: 2}
+  powerUp: {fileID: 11400000, guid: f3510d2192335434980028fbeda5cfa5, type: 2}

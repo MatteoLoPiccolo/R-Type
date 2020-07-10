@@ -1,22 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Beam : MonoBehaviour
 {
     #region Variable 
-    public PowerUpScriptableObj powerUpScriptableObj;
+    public PowerUp powerUp;
     #endregion
 
     #region Start
     // Start is called before the first frame update
     void Start()
     {
-        powerUpScriptableObj.Print();        
+        // print data of power up
+        powerUp.Print();
+        // set damage to missile type
+        BeamDamage();
     }
     #endregion
 
-    #region Method BeamDamage
+    #region Method Type of Damage
     public void BeamDamage()
     {
         

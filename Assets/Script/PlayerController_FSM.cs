@@ -1,17 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerController_FSM : MonoBehaviour
+public class PlayerController_FSM : MonoBehaviour, IMovable
 {
     #region Variable
-    PowerUpScriptableObj powerUpScriptableObj;   
-
-    // speed variable
-    public float speed;
+    PowerUp powerUpScriptableObj;
 
     // float screenBound
-    float screenWidthInWorldUnits;   
+    float screenWidthInWorldUnits;
+
+    private IMovable movable;
 
     // private refence RigidBody
     private Rigidbody rB;
@@ -19,7 +16,10 @@ public class PlayerController_FSM : MonoBehaviour
     public Rigidbody RB
     {
         get { return rB; }
-    }    
+    }
+
+    public float Speed { get; private set; }
+     
     #endregion
 
     #region Awake
@@ -27,6 +27,7 @@ public class PlayerController_FSM : MonoBehaviour
     {
         // initialize RigidBody component
         rB = GetComponent<Rigidbody>();
+        movable = GetComponent<IMovable>();
     }
     #endregion
 
@@ -46,7 +47,7 @@ public class PlayerController_FSM : MonoBehaviour
     {
         ScreenBounds();
 
-        transform.Translate(Move());        
+        transform.Translate(Move()); 
     }
     #endregion
 
@@ -72,7 +73,7 @@ public class PlayerController_FSM : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical);        
 
-        return movement.normalized * (speed * Time.deltaTime);
+        return movement.normalized * (/*movable.Speed*/ 10 * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -81,9 +82,13 @@ public class PlayerController_FSM : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-        if (other.gameObject.tag == "Wall")
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wall")
         {
-            Destroy(this.gameObject);
+            GameManager.Instance.KillPlayer();
         }
     }
     #endregion

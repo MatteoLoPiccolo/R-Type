@@ -6,16 +6,23 @@ public class RTypeShoot : MonoBehaviour
 {
     #region Variable
     // set speed of projectile
-    public float speed = 30;
-       
+    public float speed = 30;       
     #endregion
 
     #region Update
     // Update is called once per frame
     void Update()
     {
+        ShootBullet();
+    }
+    #endregion
+
+    #region Shoot Bullet
+    private void ShootBullet()
+    {
         // set projectile's direction and velocity
         transform.Translate(Vector3.right * (speed * Time.deltaTime));
     }
     #endregion
 }
+

@@ -105,5 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26d21e76afd7964a8894f72fb4a8d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpScriptableObj: {fileID: 11400000, guid: 495e3749f43591e45b2c653d7d63322c,
-    type: 2}
+  powerUp: {fileID: 11400000, guid: 37facf58d3df77848b24910cb2181e6a, type: 2}
+  laserUp: {fileID: 0}
+  laserMid: {fileID: 0}
+  laserDown: {fileID: 0}

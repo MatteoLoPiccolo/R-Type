@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MissileDrop : MonoBehaviour
 {
     #region Variable
     [SerializeField]
     private GameObject missile;
+
 
     private MeshRenderer meshRenderer;
     #endregion
@@ -24,8 +23,6 @@ public class MissileDrop : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-
-            Instantiate(missile, transform.position, Quaternion.identity);
         }
     }
     #endregion

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyDropSystem : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class EnemyDropSystem : MonoBehaviour
     #region
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Projectile")
+        if (other.gameObject.tag == "Projectile" || other.gameObject.tag == "Force")
         {
             Destroy(this.gameObject);
             

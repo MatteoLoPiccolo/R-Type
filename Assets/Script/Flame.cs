@@ -1,25 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Flame : MonoBehaviour
 {
     #region Variable
-    public PowerUpScriptableObj powerUpScriptableObj;
+    public PowerUp powerUp;
     #endregion
 
     #region Start
     // Start is called before the first frame update
     void Start()
     {
-        powerUpScriptableObj.Print();
+        // print data of power up
+        powerUp.Print();
+        // set damage to flame type
+        FlameDamage();
     }
     #endregion
 
     #region Method Type of Damage
     private void FlameDamage()
     {
-        powerUpScriptableObj.SetDamage(PowerUpScriptableObj.AttackType.Flame);
+        
     }
     #endregion
 
@@ -28,7 +29,7 @@ public class Flame : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);            
         }
     }
     #endregion

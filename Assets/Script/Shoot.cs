@@ -1,67 +1,93 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
     #region Variable
-    // reference to force, force front position, force back position, projectile, fireéPoint, force fire point, force back fire point, launchPoint, laser position up, mid and down
-    public GameObject force, forceFrontPosition, forceBackPosition, projectilePrefab, firePoint, forceFirePoint, forceBackFirePoint, launchPoint, laserUp, laserMid, laserDown;
-        
-    #endregion    
+    [SerializeField]
+    private GameObject projectilePrefab;
+    [SerializeField]
+    private Transform force;
+    [SerializeField]
+    private Transform forceFrontPosition;
+    [SerializeField]
+    private Transform forceBackPosition;
+    [SerializeField]
+    private Transform firePoint;
+    [SerializeField]
+    private Transform forceFirePoint;
+    [SerializeField]
+    private Transform forceBackFirePoint;
+    [SerializeField]
+    private Transform launchPoint;
+    [SerializeField]
+    private Transform laserUp;
+    [SerializeField]
+    private Transform laserMid;
+    [SerializeField]
+    private Transform laserDown;
+
+    private PowerUp powerUp;
+
+    private float positionPercent;
+    private int direction = 1;
+    #endregion
+
+    #region Start
+    private void Start()
+    {
+
+    }
+    #endregion
 
     #region Update
     private void Update()
     {
-       Fire();
+        SetBulletPositionAndRotation();
 
-       Launch();
+        SetChargeShootPosition();
+
+        SetLaserPositionAndRotation();
     }
     #endregion
 
     #region  Fire Bullet
-    private void Fire()
+    private void SetBulletPositionAndRotation()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && force.transform.position != forceFrontPosition.transform.position)
+        if (Input.GetKeyDown(KeyCode.Space) && force.position != forceFrontPosition.transform.position)
         {
             GameObject bullet = PoolManager.Instance.RequestBullet();
-            bullet.transform.position = firePoint.transform.position;
-            bullet.transform.rotation = firePoint.transform.rotation;
+            bullet.transform.position = firePoint.position;
+            bullet.transform.rotation = firePoint.rotation;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && force.transform.position == forceFrontPosition.transform.position)
+        if (Input.GetKeyDown(KeyCode.Space) && force.position == forceFrontPosition.position)
         {
             GameObject bullet = PoolManager.Instance.RequestBullet();
-            bullet.transform.position = forceFirePoint.transform.position;
-            bullet.transform.rotation = forceFirePoint.transform.rotation;
+            bullet.transform.position = forceFirePoint.position;
+            bullet.transform.rotation = forceFirePoint.rotation;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && force.transform.position == forceBackPosition.transform.position)
+        if (Input.GetKeyDown(KeyCode.Space) && force.position == forceBackPosition.position)
         {
             GameObject bullet = PoolManager.Instance.RequestBullet();
-            bullet.transform.position = forceBackFirePoint.transform.position;
-            bullet.transform.rotation = forceBackFirePoint.transform.rotation;
+            bullet.transform.position = forceBackFirePoint.position;
+            bullet.transform.rotation = forceBackFirePoint.rotation;
         }
+    }
 
+    private void SetLaserPositionAndRotation()
+    {
+        
+    }
+
+    void SetChargeShootPosition()
+    {
         // TODO
         if (Input.GetKey(KeyCode.Space))
         {
             // Charge Shot
         }
     }
-
-    private void Launch()
-    {
-        if (force.transform.position == forceFrontPosition.transform.position)
-        {
-            float distance = 30; 
-            
-            if (Input.GetKeyDown(KeyCode.E))
-            {                
-                //force.transform.position = Vector3.Lerp(forceFrontPosition.transform.position, launchPoint.transform.position, wait);
-                force.transform.position = launchPoint.transform.position;
-            }            
-        }
-    }
     #endregion
 }
+

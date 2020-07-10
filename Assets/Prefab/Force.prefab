@@ -171,10 +171,11 @@ MonoBehaviour:
   player: {fileID: 0}
   frontPosition: {fileID: 0}
   backPosition: {fileID: 0}
-  frontFirePoint: {fileID: 6724330807984353052}
-  backFirePoint: {fileID: 6724330808042929245}
-  lauchPoint: {fileID: 7191653928326369706}
+  frontFirePoint: {fileID: 6724330807984353055}
+  backFirePoint: {fileID: 6724330808042929244}
+  launchPoint: {fileID: 0}
   rotationSpeed: 10
+  speed: 10
 --- !u!1 &7191653928326369706
 GameObject:
   m_ObjectHideFlags: 0

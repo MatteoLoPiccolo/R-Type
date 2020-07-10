@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HomingBits : MonoBehaviour
 {
     #region Variable
-    public PowerUpScriptableObj powerUpScriptableObj;
+    public PowerUp powerUp;
     #endregion
 
     #region Start
     // Start is called before the first frame update
     void Start()
     {
-        powerUpScriptableObj.Print();
+        // print data of power up
+        powerUp.Print();
     }
     #endregion
 

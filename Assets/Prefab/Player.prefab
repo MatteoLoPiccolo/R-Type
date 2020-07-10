@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1538769584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538769585}
+  m_Layer: 0
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1538769585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538769584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1854440181899042937}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1854440181450731288
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,6 +98,7 @@ Transform:
   - {fileID: 4318408816607595965}
   - {fileID: 641708345525078163}
   - {fileID: 3239865436331310319}
+  - {fileID: 1538769585}
   m_Father: {fileID: 1854440182756764198}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -280,7 +311,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854440182756764195}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.161478, y: 1, z: 1}
@@ -313,8 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77337dc45a0be974c94f801861a35d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  state: 0
 --- !u!114 &1854440182756764194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,15 +356,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f9e50fb51faab49af9586a619326da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: {fileID: 0}
-  forceFrontPosition: {fileID: 1854440182471139346}
-  forceBackPosition: {fileID: 1854440182400152109}
   projectilePrefab: {fileID: 2221800559846066371, guid: ea19b4843e1d35142beddaeeb6a22661,
     type: 3}
-  firePoint: {fileID: 1854440182249038676}
+  force: {fileID: 0}
+  forceFrontPosition: {fileID: 1854440182471139345}
+  forceBackPosition: {fileID: 1854440182400152108}
+  firePoint: {fileID: 1854440182249038667}
   forceFirePoint: {fileID: 0}
   forceBackFirePoint: {fileID: 0}
   launchPoint: {fileID: 0}
+  laserUp: {fileID: 4318408816607595965}
+  laserMid: {fileID: 641708345525078163}
+  laserDown: {fileID: 3239865436331310319}
 --- !u!1 &1854440183016456678
 GameObject:
   m_ObjectHideFlags: 0

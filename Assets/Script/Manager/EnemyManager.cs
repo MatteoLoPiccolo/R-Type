@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -16,5 +14,9 @@ public class EnemyManager : MonoBehaviour
         //Instantiate(enemy[randomIndex], new Vector3(2, 0, 0), enemy[randomIndex].transform.rotation);
         //print(enemy[randomIndex].gameObject.name);
     }
+    #endregion
+
+    #region Instantiate Enemy
+    // TODO
     #endregion
 }

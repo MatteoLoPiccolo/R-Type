@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlameDrop : MonoBehaviour
 {
     #region Variable
     [SerializeField]
     private GameObject flame;
+
 
     private MeshRenderer meshRenderer;
     #endregion
@@ -25,8 +24,6 @@ public class FlameDrop : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-
-            Instantiate(flame, transform.position, Quaternion.identity);
         }
     }
     #endregion

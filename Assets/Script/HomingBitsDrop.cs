@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HomingBitsDrop : MonoBehaviour
 {
     #region Variable
     [SerializeField]
     private GameObject homingBits;
+
 
     private MeshRenderer meshRenderer;
     #endregion
@@ -25,8 +24,6 @@ public class HomingBitsDrop : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-
-            Instantiate(homingBits, transform.position, Quaternion.identity);
         }
     }
     #endregion

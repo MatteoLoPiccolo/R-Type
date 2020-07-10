@@ -25,8 +25,7 @@ public class LaserDrop : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-
-            Instantiate(laser, transform.position, Quaternion.identity);
+            print(laser);
         }
     }
     #endregion
